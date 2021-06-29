@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "263061804361",
+    "project_id": "fir-project-a925f",
+    "storage_bucket": "fir-project-a925f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:263061804361:android:22cd4b51dd5f34eecdb698",
+        "android_client_info": {
+          "package_name": "com.example.firebase_dybamic_link"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "263061804361-qnq44gc7udfelj6rrtfm7m5jlmge31jv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAV_d4-TlY9Kl5hGkGA7S72rA9xFU8d0QY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "263061804361-qnq44gc7udfelj6rrtfm7m5jlmge31jv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "263061804361-mn2d47nuusm12lh3uis8tc1tva3q5a3p.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.firebaseDybamicLink"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
