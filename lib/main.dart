@@ -51,6 +51,9 @@ class _MyHomePageState extends State<MyHomePage> {
       androidParameters: AndroidParameters(
         packageName: 'com.gabrielcarneiro.demoapp',
       ),
+      iosParameters: IosParameters(
+        bundleId: 'com.gabrielcarneiro.demoapp',
+      ),
       socialMetaTagParameters: SocialMetaTagParameters(
         title: 'Check out this product: (id) $id',
         description: 'This link works whether app is installed or not!',
