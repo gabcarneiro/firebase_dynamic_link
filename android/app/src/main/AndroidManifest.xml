@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gabrielcarneiro.demoapp">
    <application
-        android:label="firebase_dybamic_link"
+        android:label="firebase_dynamic_link"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

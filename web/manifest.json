@@ -1,6 +1,6 @@
 {
-    "name": "firebase_dybamic_link",
-    "short_name": "firebase_dybamic_link",
+    "name": "firebase_dynamic_link",
+    "short_name": "firebase_dynamic_link",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

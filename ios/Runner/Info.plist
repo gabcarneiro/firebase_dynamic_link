@@ -11,7 +11,7 @@
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>firebase_dybamic_link</string>
+	<string>firebase_dynamic_link</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -27,7 +27,7 @@
 			<string>Bundle ID</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.example.firebaseDybamicLink</string>
+				<string>com.example.firebaseDynamicLink</string>
 			</array>
 		</dict>
 	</array>
