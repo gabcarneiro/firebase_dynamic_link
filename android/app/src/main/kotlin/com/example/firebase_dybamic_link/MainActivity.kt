@@ -1,4 +1,4 @@
-package com.example.firebase_dybamic_link
+package com.gabrielcarneiro.demoapp
 
 import io.flutter.embedding.android.FlutterActivity
 

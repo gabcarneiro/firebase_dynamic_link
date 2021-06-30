@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:263061804361:android:22cd4b51dd5f34eecdb698",
+        "mobilesdk_app_id": "1:263061804361:android:9d0f17b0f73ea2e8cdb698",
         "android_client_info": {
-          "package_name": "com.example.firebase_dybamic_link"
+          "package_name": "com.gabrielcarneiro.demoapp"
         }
       },
       "oauth_client": [

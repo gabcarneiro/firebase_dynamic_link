@@ -1,6 +1,10 @@
+import 'dart:math';
+
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_dybamic_link/my_other_page.dart';
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/material.dart';
+import 'package:share/share.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -38,7 +42,14 @@ class _MyHomePageState extends State<MyHomePage> {
       final Uri deepLink = dynamicLink?.link;
 
       if (deepLink != null) {
-        Navigator.pushNamed(context, deepLink.path);
+        final id = deepLink.queryParameters['id'];
+
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => MyOtherPage(param: id),
+          ),
+        );
       }
     }, onError: (OnLinkErrorException e) async {
       print('onLinkError');
@@ -50,7 +61,14 @@ class _MyHomePageState extends State<MyHomePage> {
     final Uri deepLink = data?.link;
 
     if (deepLink != null) {
-      Navigator.pushNamed(context, deepLink.path);
+      final id = deepLink.queryParameters['id'];
+
+      Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => MyOtherPage(param: id),
+        ),
+      );
     }
   }
 
@@ -60,8 +78,24 @@ class _MyHomePageState extends State<MyHomePage> {
     initDynamicLinks();
   }
 
-  void _generateLink() {
-    print('abc');
+  void _generateLink() async {
+    final id = Random().nextInt(100);
+
+    final DynamicLinkParameters parameters = DynamicLinkParameters(
+      uriPrefix: 'https://gabrielcarneiro.page.link',
+      link: Uri.parse('https://gabrielcarneiro.com/share?id=$id'),
+      androidParameters: AndroidParameters(
+        packageName: 'com.gabrielcarneiro.demoapp',
+      ),
+      socialMetaTagParameters: SocialMetaTagParameters(
+        title: 'Veja o produto id $id',
+        description: 'This link works whether app is installed or not!',
+      ),
+    );
+
+    final dynamicUrl = await parameters.buildShortLink();
+
+    await Share.share(dynamicUrl.shortUrl.toString());
   }
 
   @override
@@ -71,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: TextButton(
+        child: ElevatedButton(
           child: Text('Generate Link'),
           onPressed: _generateLink,
         ),

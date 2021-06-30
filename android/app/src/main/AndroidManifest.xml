@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.firebase_dybamic_link">
+    package="com.gabrielcarneiro.demoapp">
    <application
         android:label="firebase_dybamic_link"
         android:icon="@mipmap/ic_launcher">

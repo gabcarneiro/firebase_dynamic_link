@@ -35,7 +35,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.example.firebase_dybamic_link"
+        applicationId "com.gabrielcarneiro.demoapp"
         minSdkVersion 16
         targetSdkVersion 30
         multiDexEnabled true
