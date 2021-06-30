@@ -36,6 +36,32 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  @override
+  void initState() {
+    super.initState();
+    initDynamicLinks();
+  }
+
+  void _generateLink() async {
+    final id = Random().nextInt(100);
+
+    final DynamicLinkParameters parameters = DynamicLinkParameters(
+      uriPrefix: 'https://gabrielcarneiro.page.link',
+      link: Uri.parse('https://gabrielcarneiro.com/share?id=$id'),
+      androidParameters: AndroidParameters(
+        packageName: 'com.gabrielcarneiro.demoapp',
+      ),
+      socialMetaTagParameters: SocialMetaTagParameters(
+        title: 'Check out this product: (id) $id',
+        description: 'This link works whether app is installed or not!',
+      ),
+    );
+
+    final dynamicUrl = await parameters.buildShortLink();
+
+    await Share.share(dynamicUrl.shortUrl.toString());
+  }
+
   void initDynamicLinks() async {
     FirebaseDynamicLinks.instance.onLink(
         onSuccess: (PendingDynamicLinkData dynamicLink) async {
@@ -70,32 +96,6 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       );
     }
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    initDynamicLinks();
-  }
-
-  void _generateLink() async {
-    final id = Random().nextInt(100);
-
-    final DynamicLinkParameters parameters = DynamicLinkParameters(
-      uriPrefix: 'https://gabrielcarneiro.page.link',
-      link: Uri.parse('https://gabrielcarneiro.com/share?id=$id'),
-      androidParameters: AndroidParameters(
-        packageName: 'com.gabrielcarneiro.demoapp',
-      ),
-      socialMetaTagParameters: SocialMetaTagParameters(
-        title: 'Veja o produto id $id',
-        description: 'This link works whether app is installed or not!',
-      ),
-    );
-
-    final dynamicUrl = await parameters.buildShortLink();
-
-    await Share.share(dynamicUrl.shortUrl.toString());
   }
 
   @override
