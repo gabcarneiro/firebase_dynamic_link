@@ -27,7 +27,7 @@
 			<string>Bundle ID</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.example.firebaseDynamicLink</string>
+				<string>com.gabrielcarneiro.demoapp</string>
 			</array>
 		</dict>
 	</array>
